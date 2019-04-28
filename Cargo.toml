@@ -1,0 +1,7 @@
+[package]
+name = "fizzbuzz_rust"
+version = "0.1.0"
+authors = ["Gabriel Stratan <contact@ithanium.org>"]
+edition = "2018"
+
+[dependencies]

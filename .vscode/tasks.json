@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "RustupMSVC",
+            "type": "shell",
+            "command": "rustup",
+            "args": [
+                "override", "add", "stable-x86_64-pc-windows-msvc"
+            ]
+        },
+        {
+            "label": "CargoBuildDebug",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build", "-v"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$rustc",
+            "dependsOn": "RustupMSVC"
+        },
+        {
+            "label": "CargoBuildRelease",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build", "-v", "--release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$rustc",
+            "dependsOn": "RustupMSVC"
+        }
+    ]
+}
